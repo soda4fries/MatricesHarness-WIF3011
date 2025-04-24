@@ -26,7 +26,7 @@ public class ParallelArraySetSIMDTransposeMultiplication implements AbstractMatr
 
         double[][] result = new double[m][p];
 
-        // Use Arrays.parallelSetAll to parallelize the filling of the result matrix
+
         Arrays.parallelSetAll(result, i -> {
             double[] aRow = a[i];
             double[] resultRow = new double[p];
@@ -64,6 +64,6 @@ public class ParallelArraySetSIMDTransposeMultiplication implements AbstractMatr
 
     @Override
     public String getName() {
-        return "Parallel SIMD Transpose Multiplication";
+        return "Parallel ArraySet Transpose SIMD Multiplication";
     }
 }

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Matrix multiplication using SIMD instructions with lightweight parallelization
  * and transposed columns for better cache locality.
+ * if u can tile this prolly will win, kinda getting array bounds exception when dividing by row/thread no kek
  */
 public class ParallelThreadPoolSIMDMultiplication implements AbstractMatrixMultiplicationAlgorithm {
 

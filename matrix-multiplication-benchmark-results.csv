@@ -1,43 +1,43 @@
 "Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: algorithmName","Param: size"
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,86.654731,NaN,"ops/ms","Parallel Fork Join Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.001638,NaN,"ops/ms","Parallel Fork Join Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,4239.399051,NaN,"ops/ms","Parallel Fork Join SIMD Tiled Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.012208,NaN,"ops/ms","Parallel Fork Join SIMD Tiled Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,2.524349,NaN,"ops/ms","Parallel Thread Pool SIMD Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.011851,NaN,"ops/ms","Parallel Thread Pool SIMD Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,2.057429,NaN,"ops/ms","Parallel Thread-Local Multiplication with Object Pooling",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.006860,NaN,"ops/ms","Parallel Thread-Local Multiplication with Object Pooling",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,7883.318123,NaN,"ops/ms","Seq Naive Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.000577,NaN,"ops/ms","Seq Naive Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,4883.860176,NaN,"ops/ms","Seq SIMD Transposed Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.002436,NaN,"ops/ms","Seq SIMD Transposed Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,2938.052581,NaN,"ops/ms","Seq Transpose Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.001213,NaN,"ops/ms","Seq Transpose Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.014740,NaN,"ms/op","Parallel Fork Join Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,842.730875,NaN,"ms/op","Parallel Fork Join Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000225,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,85.887574,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.513287,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,92.296399,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.735319,NaN,"ms/op","Parallel Thread-Local Multiplication with Object Pooling",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,132.533800,NaN,"ms/op","Parallel Thread-Local Multiplication with Object Pooling",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000126,NaN,"ms/op","Seq Naive Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,1650.637900,NaN,"ms/op","Seq Naive Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000292,NaN,"ms/op","Seq SIMD Transposed Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,400.408200,NaN,"ms/op","Seq SIMD Transposed Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000228,NaN,"ms/op","Seq Transpose Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,641.227450,NaN,"ms/op","Seq Transpose Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.074600,NaN,"ms/op","Parallel Fork Join Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,719.924250,NaN,"ms/op","Parallel Fork Join Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.014550,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,103.094700,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,1.736350,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,134.616300,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,1.842150,NaN,"ms/op","Parallel Thread-Local Multiplication with Object Pooling",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,168.430300,NaN,"ms/op","Parallel Thread-Local Multiplication with Object Pooling",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.008350,NaN,"ms/op","Seq Naive Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,2652.505800,NaN,"ms/op","Seq Naive Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.038600,NaN,"ms/op","Seq SIMD Transposed Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,522.833500,NaN,"ms/op","Seq SIMD Transposed Multiplication",1000
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.036850,NaN,"ms/op","Seq Transpose Multiplication",3
-"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,799.802200,NaN,"ms/op","Seq Transpose Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,962.941031,NaN,"ops/ms","Parallel ArraySet Transpose SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.026365,NaN,"ops/ms","Parallel ArraySet Transpose SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,136.719470,NaN,"ops/ms","Parallel Fork Join Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.002790,NaN,"ops/ms","Parallel Fork Join Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,5699.185510,NaN,"ops/ms","Parallel Fork Join SIMD Tiled Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.023277,NaN,"ops/ms","Parallel Fork Join SIMD Tiled Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,4.509019,NaN,"ops/ms","Parallel Thread Pool SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.021062,NaN,"ops/ms","Parallel Thread Pool SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,10462.127031,NaN,"ops/ms","Seq Naive Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.000797,NaN,"ops/ms","Seq Naive Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,5932.566984,NaN,"ops/ms","Seq SIMD Transposed Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.003481,NaN,"ops/ms","Seq SIMD Transposed Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,5838.409862,NaN,"ops/ms","Seq Transpose Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","thrpt",1,2,0.002075,NaN,"ops/ms","Seq Transpose Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000913,NaN,"ms/op","Parallel ArraySet Transpose SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,37.214800,NaN,"ms/op","Parallel ArraySet Transpose SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.009346,NaN,"ms/op","Parallel Fork Join Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,374.219883,NaN,"ms/op","Parallel Fork Join Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000180,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,47.207909,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.234309,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,50.919660,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000095,NaN,"ms/op","Seq Naive Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,1089.679450,NaN,"ms/op","Seq Naive Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000170,NaN,"ms/op","Seq SIMD Transposed Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,283.490788,NaN,"ms/op","Seq SIMD Transposed Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,0.000175,NaN,"ms/op","Seq Transpose Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","avgt",1,2,475.641600,NaN,"ms/op","Seq Transpose Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.099400,NaN,"ms/op","Parallel ArraySet Transpose SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,37.296350,NaN,"ms/op","Parallel ArraySet Transpose SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.110400,NaN,"ms/op","Parallel Fork Join Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,356.916050,NaN,"ms/op","Parallel Fork Join Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.008750,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,46.201850,NaN,"ms/op","Parallel Fork Join SIMD Tiled Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,1.101350,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,67.552500,NaN,"ms/op","Parallel Thread Pool SIMD Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.007500,NaN,"ms/op","Seq Naive Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,1043.873750,NaN,"ms/op","Seq Naive Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.009450,NaN,"ms/op","Seq SIMD Transposed Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,303.505650,NaN,"ms/op","Seq SIMD Transposed Multiplication",1000
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,0.007300,NaN,"ms/op","Seq Transpose Multiplication",3
+"org.example.MatrixMultiplicationBenchmark.multiply","ss",1,2,469.647350,NaN,"ms/op","Seq Transpose Multiplication",1000
