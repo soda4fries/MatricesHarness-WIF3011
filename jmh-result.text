@@ -1,0 +1,7 @@
+Benchmark                               (algorithmIndex)  (size)   Mode  Cnt      Score   Error   Units
+MatrixMultiplicationBenchmark.multiply                 0    2000  thrpt          ≈ 10⁻⁵          ops/ms
+MatrixMultiplicationBenchmark.multiply                 1    2000  thrpt          ≈ 10⁻⁴          ops/ms
+MatrixMultiplicationBenchmark.multiply                 2    2000  thrpt          ≈ 10⁻⁴          ops/ms
+MatrixMultiplicationBenchmark.multiply                 0    2000   avgt       74011.529           ms/op
+MatrixMultiplicationBenchmark.multiply                 1    2000   avgt       10136.293           ms/op
+MatrixMultiplicationBenchmark.multiply                 2    2000   avgt       11217.508           ms/op
