@@ -28,9 +28,8 @@ public class ParallelForkJoinSIMDTiledMultiplication implements AbstractMatrixMu
 
     @Override
     public double[][] multiply(double[][] a, double[][] b) {
-        if (!checkIfValidForMultiplication(a, b)) {
-            throw new IllegalArgumentException("Invalid matrices for multiplication");
-        }
+        assert checkIfValidForMultiplication(a, b) : "Invalid matrices for multiplication";
+
 
         int aRows = a.length;
         int aCols = a[0].length;
@@ -51,7 +50,7 @@ public class ParallelForkJoinSIMDTiledMultiplication implements AbstractMatrixMu
     }
 
     /**
-     * Optimized sequential blocked multiplication
+     * sequential blocked multiplication
      */
     private void multiplySequentialBlocked(double[][] a, double[][] bTransposed, double[][] result,
                                            int aRows, int aCols, int bCols) {
@@ -95,12 +94,12 @@ public class ParallelForkJoinSIMDTiledMultiplication implements AbstractMatrixMu
             sum += a[i][k] * bTransposed[j][k];
         }
 
-        // Add to any existing result (important for the tiled algorithm)
+        // Add to any existing result
         result[i][j] += sum;
     }
 
     /**
-     * Optimized matrix transposition
+     * matrix transposition
      */
     private double[][] transpose(double[][] matrix, int rows, int cols) {
         double[][] transposed = new double[rows][cols];

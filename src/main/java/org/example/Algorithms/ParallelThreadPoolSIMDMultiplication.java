@@ -21,9 +21,8 @@ public class ParallelThreadPoolSIMDMultiplication implements AbstractMatrixMulti
 
     @Override
     public double[][] multiply(double[][] a, double[][] b) {
-        if (!checkIfValidForMultiplication(a, b)) {
-            throw new IllegalArgumentException("Invalid matrices for multiplication");
-        }
+        assert checkIfValidForMultiplication(a, b) : "Invalid matrices for multiplication";
+
 
         int aRows = a.length;
         int aCols = a[0].length;
@@ -48,16 +47,13 @@ public class ParallelThreadPoolSIMDMultiplication implements AbstractMatrixMulti
         int rowsPerThread = Math.max(1, aRows / threadCount);
 
         for (int t = 0; t < threadCount; t++) {
-            final int threadId = t;
-            final int startRow = threadId * rowsPerThread;
-            final int endRow = (threadId == threadCount - 1) ? aRows : (threadId + 1) * rowsPerThread;
+            final int startRow = t * rowsPerThread;
+            final int endRow = (t == threadCount - 1) ? aRows : (t + 1) * rowsPerThread;
 
             // Skip empty ranges
             if (startRow >= aRows) continue;
 
-            executor.execute(() -> {
-                processRowRange(a, bTransposed, result, startRow, endRow, aCols, bCols);
-            });
+            executor.execute(() -> processRowRange(a, bTransposed, result, startRow, endRow, aCols, bCols));
         }
 
         // Wait for all tasks to complete

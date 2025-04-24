@@ -50,7 +50,7 @@ public class MatrixMultiplicationBenchmark {
      * Main benchmark for execution time and throughput
      */
     @Benchmark
-    @BenchmarkMode({Mode.All})
+    @BenchmarkMode({Mode.AverageTime, Mode.Throughput, Mode.SingleShotTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Warmup(iterations = 2, time = 3)
@@ -86,17 +86,17 @@ public class MatrixMultiplicationBenchmark {
         var options = new OptionsBuilder()
                 .include(MatrixMultiplicationBenchmark.class.getSimpleName())
                 // "10", "16", "33", "64", "128", "256", "512", "1024", "2056", "5000",
-                .param("size", "5000")
+                .param("size", "3","1000")
                 .param("algorithmName", algorithmNames)
                 .warmupIterations(1)
-                .warmupTime(TimeValue.seconds(3))
+                .warmupTime(TimeValue.seconds(1))
                 .measurementIterations(2)
-                .measurementTime(TimeValue.seconds(3))
+                .measurementTime(TimeValue.seconds(1))
                 .timeout(TimeValue.minutes(30))
                 .forks(1)
                 .shouldDoGC(true)
-                .resultFormat(ResultFormatType.JSON)
-                .result("matrix-multiplication-benchmark-results.json")
+                .resultFormat(ResultFormatType.CSV)
+                .result("matrix-multiplication-benchmark-results.csv")
                 .jvmArgs(
                         "-Xms8g", "-Xmx12g",                   // Large heap size (adjust based on available RAM)
                         //"-XX:+AlwaysPreTouch",             //Pre-touch memory pages during JVM startup
@@ -110,7 +110,7 @@ public class MatrixMultiplicationBenchmark {
                 algorithmNames.length + " algorithms...");
         new Runner(options).run();
 
-        System.out.println("\nBenchmark complete. Results have been saved to 'matrix-multiplication-benchmark-results.json'");
+        System.out.println("\nBenchmark complete. Results have been saved to 'matrix-multiplication-benchmark-results.csv'");
 
     }
 }
