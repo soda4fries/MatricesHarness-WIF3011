@@ -1,9 +1,6 @@
 package org.example.Algorithms;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class ConcurrentElementMultiplication implements AbstractMatrixMultiplicationAlgorithm {
+public class ConcurrentRowMultiplication implements AbstractMatrixMultiplicationAlgorithm {
     @Override
     public double[][] multiply(double[][] a, double[][] b) {
         assert a[0].length == b.length;
@@ -11,24 +8,20 @@ public class ConcurrentElementMultiplication implements AbstractMatrixMultiplica
         int m = a.length, n = a[0].length, p = b[0].length;
         double[][] result = new double[m][p];
 
-        List<Thread> threads = new ArrayList<>();
+        Thread[] threads = new Thread[m];
 
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < p; j++) {
-                final int row = i;
-                final int col = j;
-
-                Thread t = new Thread(() -> {
+            final int row = i;
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < p; j++) {
                     double sum = 0.0;
                     for (int k = 0; k < n; k++) {
-                        sum += a[row][k] * b[k][col];
+                        sum += a[row][k] * b[k][j];
                     }
-                    result[row][col] = sum;
-                });
-
-                threads.add(t);
-                t.start();
-            }
+                    result[row][j] = sum;
+                }
+            });
+            threads[i].start();
         }
 
         for (Thread t : threads) {
@@ -42,6 +35,6 @@ public class ConcurrentElementMultiplication implements AbstractMatrixMultiplica
 
     @Override
     public String getName() {
-        return "Concurrent Element Multiplication";
+        return "Concurrent Row Multiplication";
     }
 }

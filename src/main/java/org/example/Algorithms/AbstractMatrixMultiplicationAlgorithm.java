@@ -40,7 +40,7 @@ public interface AbstractMatrixMultiplicationAlgorithm {
         System.out.println("\n===== Testing " + getName() + " =====");
 
         // Create a naive implementation for comparison
-        SeqNaiveMultiplication naive = new SeqNaiveMultiplication();
+        AbstractMatrixMultiplicationAlgorithm naive = new SeqSIMDTransposedMultiplication();
         double[][] expected = naive.multiply(a, b);
         double[][] actual = multiply(a, b);
 
@@ -86,7 +86,7 @@ public interface AbstractMatrixMultiplicationAlgorithm {
         try {
             var configBuilder = new ConfigurationBuilder()
                     .setScanners(Scanners.SubTypes)
-                    .setUrls(ClasspathHelper.forPackage("org.example.algorithms"));
+                    .setUrls(ClasspathHelper.forPackage("org.example.Algorithms"));
 
             var reflections = new Reflections(configBuilder);
 
@@ -114,7 +114,7 @@ public interface AbstractMatrixMultiplicationAlgorithm {
             // Add fallback algorithm if none were discovered
             if (algorithms.isEmpty()) {
                 System.out.println("No algorithms discovered via reflection, adding fallback NaiveMultiplication");
-                algorithms.add(new SeqNaiveMultiplication());
+                algorithms.add(new SeqSIMDTransposedMultiplication());
             }
             algorithms.sort(Comparator.comparing(AbstractMatrixMultiplicationAlgorithm::getName));
 
@@ -123,7 +123,7 @@ public interface AbstractMatrixMultiplicationAlgorithm {
             System.err.println("Failed to discover algorithms: " + e.getMessage());
             if (algorithms.isEmpty()) {
                 System.out.println("Adding fallback NaiveMultiplication after reflection failure");
-                algorithms.add(new SeqNaiveMultiplication());
+                algorithms.add(new SeqSIMDTransposedMultiplication());
             }
         }
 

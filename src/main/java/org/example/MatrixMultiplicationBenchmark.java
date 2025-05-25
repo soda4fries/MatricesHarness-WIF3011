@@ -9,6 +9,7 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.runner.options.TimeValue;
+import org.openjdk.jmh.runner.options.VerboseMode;
 
 import java.util.concurrent.TimeUnit;
 
@@ -86,19 +87,19 @@ public class MatrixMultiplicationBenchmark {
         var options = new OptionsBuilder()
                 .include(MatrixMultiplicationBenchmark.class.getSimpleName())
                 // "10", "16", "33", "64", "128", "256", "512", "1024", "2056", "5000",
-                .param("size", "3","1000")
+                .param("size","500","1000","5000", "10000")
                 .param("algorithmName", algorithmNames)
                 .warmupIterations(1)
                 .warmupTime(TimeValue.seconds(1))
-                .measurementIterations(2)
+                .measurementIterations(1)
                 .measurementTime(TimeValue.seconds(1))
                 .timeout(TimeValue.minutes(30))
                 .forks(1)
-                .shouldDoGC(true)
                 .resultFormat(ResultFormatType.CSV)
                 .result("matrix-multiplication-benchmark-results.csv")
+                .verbosity(VerboseMode.EXTRA) 
                 .jvmArgs(
-                        "-Xms8g", "-Xmx12g",                   // Large heap size (adjust based on available RAM)
+                        "-Xms350g", "-Xmx350g",                   // Large heap size (adjust based on available RAM)
                         //"-XX:+AlwaysPreTouch",             //Pre-touch memory pages during JVM startup
                         "--add-modules=jdk.incubator.vector",   //vector api
                         "-XX:+UseNUMA",                        // Enable NUMA support
